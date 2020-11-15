@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=14" };
-static const char dmenufont[]       = "monospace:size=14";
+static const char *fonts[]          = { "Fira Code:size=14" };
+static const char dmenufont[]       = "Fira Code:size=14";
 //background colour
 static const char col_gray1[]       = "#000000";
 //inactive window border colour
@@ -51,7 +51,7 @@ static const Layout layouts[] = {
 
 #define TERMINAL "st"
 /* key definitions */
-#define MODKEY Mod4Mask
+#define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -100,8 +100,6 @@ static Key keys[] = {
 	{ MODKEY, 	            	XK_p, 	   spawn,	   {.v = pwm } },
 	{ MODKEY|ControlMask,           XK_h, 	   shiftview,       {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_l, 	   shiftview,       {.i = +1 } },
-	{ ControlMask|Mod1Mask,         XK_h, 	   shiftview,       {.i = -1 } },
-	{ ControlMask|Mod1Mask,         XK_l, 	   shiftview,       {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_Left,   shiftview,       {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_Right,  shiftview,       {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
