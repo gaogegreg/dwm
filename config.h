@@ -14,7 +14,7 @@ static const char col_gray2[]       = "#7320D2";
 //font color
 static const char col_gray3[]       = "#7320D2";
 //current tag and current window font colour
-static const char col_gray4[]       = "#00AA00";
+static const char col_gray4[]       = "#00DD00";
 //top bar bacground colour and active window border colour
 static const char col_cyan[]        = "#000000";
 static const char *colors[][3]      = {
@@ -44,9 +44,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "",      tile },    /* first entry is default */
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "",      monocle },
 };
 
 #define TERMINAL "st"
