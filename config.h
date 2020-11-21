@@ -14,7 +14,7 @@ static const char col_gray2[]       = "#7320D2";
 //font color
 static const char col_gray3[]       = "#7320D2";
 //current tag and current window font colour
-static const char col_gray4[]       = "#00DD00";
+static const char col_gray4[]       = "#00AD00";
 //top bar bacground colour and active window border colour
 static const char col_cyan[]        = "#000000";
 static const char *colors[][3]      = {
@@ -68,6 +68,11 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *astrill[]  = { "astrill", NULL };
 static const char *homepage[]  = { "homepage.sh", NULL };
 static const char *pwm[]  = { "pwm2.0", NULL };
+static const char *bright20[]  = { "bright20", NULL };
+static const char *bright40[]  = { "bright40", NULL };
+static const char *bright60[]  = { "bright60", NULL };
+static const char *bright80[]  = { "bright80", NULL };
+static const char *screenshot[]  = { "screenshot", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -95,7 +100,17 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY, 	            	XK_n, 	   spawn,	   SHCMD(TERMINAL " -e nnn -e")},
+	{ MODKEY, 	            	XK_4, 	   spawn,	   SHCMD(TERMINAL " -e nnn -e")},
 	{ MODKEY, 	            	XK_v, 	   spawn,	   {.v = astrill } },
+	{ 0, 	        		0x1008ff13,  spawn,	   SHCMD("volumeup.sh; pkill -RTMIN+10 dwmblocks") },
+	{ 0, 	        		0x1008ff11,  spawn,	   SHCMD("volumedown.sh; pkill -RTMIN+10 dwmblocks") },
+	{ 0, 	        		0x1008ff12,  spawn,	   SHCMD("mute.sh; pkill -RTMIN+10 dwmblocks") },
+/*	{ 0, 	        		0x1008ffb2,  spawn,	   {.v = micmute } },*/
+	{ 0, 	        		0x1008ff02,  spawn,	   {.v = bright40 } },
+	{ MODKEY, 	        	0x1008ff02,  spawn,	   {.v = bright80 } },
+	{ 0, 	        		0x1008ff03,  spawn,	   {.v = bright20 } },
+	{ MODKEY, 	        	0x1008ff03,  spawn,	   {.v = bright60 } },
+	{ MODKEY, 	        	XK_s, 	     spawn,	   {.v = screenshot } },
 	{ MODKEY, 	            	XK_2, 	   spawn,	   {.v = homepage } },
 	{ MODKEY, 	            	XK_p, 	   spawn,	   {.v = pwm } },
 	{ MODKEY|ControlMask,           XK_h, 	   shiftview,       {.i = -1 } },
